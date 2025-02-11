@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">SREC conference</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="Register">Register</string>
+    <string name="already_a_user">already a user</string>
+    <string name="logout">logout</string>
+    <string name="forgetpassword">forgetpassword</string>
+    <string name="complete_profile_title">Complete Your Profile</string>
+    <string name="name_hint">Enter your name</string>
+    <string name="email_hint">Enter your email address</string>
+    <string name="id_hint">Enter your ID</string>
+    <string name="set_picture_button">Set Profile Picture</string>
+    <string name="save_button">Save</string>
+    <string name="profile_picture_description">Profile Picture</string>
+    <string name="date_of_birth_hint">Select Date of Birth</string>
+    <string name="drawer_close">Close Drawer</string>
+    <string name="drawer_open">Open Drawer</string>
+    <string name="share_screen_description">already a user</string>
+    <string name="terms_and_conditions_content">This License refers to version 3 of the GNU General Public License.
+
+  Copyright also means copyright-like laws that apply to other kinds of
+works, such as semiconductor masks.
+            android:padding="16dp</string>
+    <string name="sort_by_prompt">Sort by</string>
+</resources>

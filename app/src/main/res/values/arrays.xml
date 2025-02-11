@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="filter_options">filter_options
+        <item>All</item>
+        <item>Today</item>
+        <item>Tomorrow</item>
+        <item>This Week</item>
+    </string-array>
+</resources>

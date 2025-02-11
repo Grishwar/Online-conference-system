@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="horizontal"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop="200dp"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/btnTeacher"
+            android:layout_width="136dp"
+            android:layout_height="158dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Teacher"
+            android:onClick="onTeacherButtonClick"
+            android:scaleType="fitCenter"
+            android:src="@drawable/teachers" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="               Teacher"
+            android:textSize="14sp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop="200dp"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/btnStudent"
+            android:layout_width="170dp"
+            android:layout_height="157dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Student"
+            android:onClick="onStudentButtonClick"
+            android:scaleType="fitCenter"
+            android:src="@drawable/students" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="                         Student"
+            android:textSize="14sp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+</LinearLayout>

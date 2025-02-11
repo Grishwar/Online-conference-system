@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Help and Feedback"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_alignParentTop="true"/>
+
+    <!-- Help Contact Info -->
+    <TextView
+        android:id="@+id/text_help_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="For help, contact: "
+        android:textSize="18sp"
+        android:padding="16dp"
+        android:layout_below="@id/text_title"/>
+
+    <!-- Help Contact Options -->
+    <TextView
+        android:id="@+id/text_help_options"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email: help@gmail.com\nPhone: +1234567890"
+        android:textSize="16sp"
+        android:padding="16dp"
+        android:layout_below="@id/text_help_contact"/>
+
+    <!-- Feedback -->
+    <TextView
+        android:id="@+id/text_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Feedback: "
+        android:textSize="18sp"
+        android:padding="16dp"
+        android:layout_below="@id/text_help_options"
+        android:layout_marginTop="32dp"/>
+
+    <!-- Feedback Link -->
+    <Button
+        android:id="@+id/btn_feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Give Feedback"
+        android:layout_below="@id/text_feedback"
+        android:layout_centerHorizontal="true"
+        android:padding="16dp"/>
+
+</RelativeLayout>

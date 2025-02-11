@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainUI">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true">
+
+        <!-- Left Icon -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_star_outline_24"
+            android:layout_gravity="start"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp" />
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SREC Conference"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            android:textColor="@color/white"/>
+
+        <!-- Right Icon -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_edit_note_24"
+            android:layout_gravity="end"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Search Bar -->
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:queryHint="Search"
+        android:layout_marginBottom="25dp"
+        app:queryBackground="@color/gray" />
+
+    <!-- Meeting Options -->
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+
+        android:layout_below="@+id/searchView"
+        android:orientation="horizontal">
+
+        <!-- Create Meeting -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="4dp">
+            <ImageView
+                android:id="@+id/iv_new_meeting"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:src="@drawable/img"
+                android:layout_centerHorizontal="true"
+                />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="create meeting"
+                android:layout_below="@id/iv_new_meeting"
+                android:layout_alignStart="@id/iv_new_meeting"
+                android:layout_alignEnd="@id/iv_new_meeting"
+                android:layout_marginTop="8dp"
+                android:gravity="center" />
+
+        </RelativeLayout>
+
+        <!-- Join Meeting -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp">
+
+            <ImageView
+                android:id="@+id/iv_join"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:src="@drawable/img_2"
+                android:layout_centerHorizontal="true"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Join"
+                android:layout_below="@id/iv_join"
+                android:layout_alignStart="@id/iv_join"
+                android:layout_alignEnd="@id/iv_join"
+                android:layout_marginTop="8dp"
+                android:gravity="center" />
+        </RelativeLayout>
+
+        <!-- Schedule Meeting -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="8dp">
+
+            <ImageView
+                android:id="@+id/iv_schedule"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:src="@drawable/img_1"
+                android:layout_alignParentEnd="true"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Schedule"
+                android:layout_below="@id/iv_schedule"
+                android:layout_alignStart="@id/iv_schedule"
+                android:layout_alignEnd="@id/iv_schedule"
+                android:layout_marginTop="8dp"
+                android:gravity="center" />
+        </RelativeLayout>
+    </LinearLayout>
+    <!-- bottom Options -->
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/linear1"
+        android:layout_marginTop="370dp"
+
+        android:orientation="horizontal">
+
+        <!-- Create Meeting -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/iv_new_term"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/img_4" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_new_term"
+                android:layout_alignStart="@id/iv_new_term"
+                android:layout_alignEnd="@id/iv_new_term"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Terms &amp; conditions" />
+
+        </RelativeLayout>
+
+
+
+        <!-- Schedule Meeting -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/iv_setting"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/img_6" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_setting"
+                android:layout_alignStart="@id/iv_setting"
+                android:layout_alignEnd="@id/iv_setting"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Settings" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>
