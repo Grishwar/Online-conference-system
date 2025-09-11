@@ -39,3 +39,45 @@
 
 ### 1. Clone the Repository
 ```bash
+
+
+2. Firebase Configuration
+Create a new Firebase project at Firebase Console.
+Add an Android app with the package name com.example.myapplication.
+Download the google-services.json file.
+Place the google-services.json file in the app directory.
+3. ZEGOCLOUD Setup
+Sign up for a ZEGOCLOUD account.
+Obtain your AppID and AppSign.
+Update these credentials in your app.
+4. Build and Run
+Open the project in Android Studio.
+Sync Gradle files.
+Build the project.
+Run on an emulator or physical device.
+📂 Project Structure
+app/
+├── src/
+│   ├── main/
+│   │   ├── java/com/example/myapplication/
+│   │   │   ├── LiveActivity.java
+│   │   │   ├── MainActivity.java
+│   │   │   ├── MainUI.java
+│   │   │   └── ...
+│   │   └── res/
+│   └── androidTest/
+└── build.gradle
+📦 Dependencies
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.firebase:firebase-auth:22.3.1'
+    implementation 'com.github.ZEGOCLOUD:zego_uikit_prebuilt_live_streaming_android'
+    implementation 'com.google.code.gson:gson:2.8.8'
+}
+⚙️ Configuration
+The app uses the following configuration from google-services.json:
+
+Project ID: login-register-project-b9528
+Package Name: com.example.myapplication
