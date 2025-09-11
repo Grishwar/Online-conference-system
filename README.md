@@ -39,6 +39,7 @@
 
 ### 1. Clone the Repository
 ```bash
+git clone https://github.com/yourusername/MyApplication.git
 
 
 2. Firebase Configuration
