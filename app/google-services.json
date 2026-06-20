@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "YOUR PROJECT NUMBER",
-    "project_id": "yOUR PROJECT ID",
-    "storage_bucket": "login-register-project-b9528.appspot.com"
+    "project_number": "897841129276",
+    "project_id": "online-conference-system-abcf3",
+    "storage_bucket": "online-conference-system-abcf3.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:729225591280:android:f90252ab15a807ebb4c535",
+        "mobilesdk_app_id": "1:897841129276:android:245795373b0a0f3e966039",
         "android_client_info": {
           "package_name": "com.example.myapplication"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "YOUR API KEY"
+          "current_key": "AIzaSyAUzy6p20kLeDJKQWAvSnids0hKG1C5N0A"
         }
       ],
       "services": {

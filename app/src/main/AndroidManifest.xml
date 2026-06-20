@@ -2,7 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Internet -->
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- ZEGO Video Call Permissions -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- Optional -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
 
@@ -17,59 +24,68 @@
         android:theme="@style/Theme.Material3.Light"
         tools:targetApi="31">
 
-
         <activity
             android:name=".Help_Feedback"
             android:exported="false" />
+
         <activity
             android:name=".settings"
             android:exported="false" />
+
         <activity
             android:name=".MainUI"
             android:exported="false" />
+
         <activity
             android:name=".TermsAndCondition"
             android:exported="false" />
+
         <activity
             android:name=".ViewProfile"
             android:exported="false" />
+
         <activity
             android:name=".MainActivityToDoList"
             android:exported="false" />
+
         <activity
             android:name=".ViewAllMeetingsActivity"
             android:exported="false" />
+
         <activity
             android:name=".UpdateDeleteActivity"
             android:exported="false" />
+
         <activity
             android:name=".MeetingListActivity"
             android:exported="false" />
+
         <activity
             android:name=".AddMeetingActivity"
             android:exported="false" />
+
         <activity
             android:name=".LiveActivity"
             android:exported="false" />
-        <activity
-            android:name=".AppConstants"
-            android:exported="false" />
+
         <activity
             android:name=".Register"
             android:exported="false"
             android:theme="@style/Theme.Material3.Light.NoActionBar" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
         <activity
             android:name=".Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
+
     </application>
 
 </manifest>

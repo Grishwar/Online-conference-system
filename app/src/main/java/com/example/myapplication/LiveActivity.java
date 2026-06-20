@@ -1,12 +1,17 @@
 package com.example.myapplication;
 
-
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.zegocloud.uikit.prebuilt.livestreaming.ZegoUIKitPrebuiltLiveStreamingConfig;
 import com.zegocloud.uikit.prebuilt.livestreaming.ZegoUIKitPrebuiltLiveStreamingFragment;
@@ -30,32 +35,116 @@ public class LiveActivity extends AppCompatActivity {
         userID = getIntent().getStringExtra("user_id");
         name = getIntent().getStringExtra("name");
         liveID = getIntent().getStringExtra("live_id");
-        isHost = getIntent().getBooleanExtra("host",false);
-        liveIdText.setText(liveID);
+        isHost = getIntent().getBooleanExtra("host", false);
 
-        addFragment();
+        Log.d("ZEGO_DEBUG", "userID = " + userID);
+        Log.d("ZEGO_DEBUG", "name = " + name);
+        Log.d("ZEGO_DEBUG", "liveID = " + liveID);
+        Log.d("ZEGO_DEBUG", "isHost = " + isHost);
 
-        shareBtn.setOnClickListener((v)->{
-            Intent intent = new Intent();
-            intent.setAction(Intent.ACTION_SEND);
+        liveIdText.setText("LIVE ID : " + liveID);
+
+        shareBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setType("text/plain");
-            intent.putExtra(intent.EXTRA_TEXT,"join my live \n Live ID : "+liveID);
-            startActivity(Intent.createChooser(intent,"Share via"));
+            intent.putExtra(Intent.EXTRA_TEXT,
+                    "Join my live\nLive ID : " + liveID);
+
+            startActivity(Intent.createChooser(intent, "Share via"));
         });
+
+        checkPermissions();
     }
 
-    void addFragment(){
-        ZegoUIKitPrebuiltLiveStreamingConfig config;
-        if(isHost){
-            config = ZegoUIKitPrebuiltLiveStreamingConfig.host();
-        }else{
-            config = ZegoUIKitPrebuiltLiveStreamingConfig.audience();
-        }
+    private void checkPermissions() {
 
-        ZegoUIKitPrebuiltLiveStreamingFragment fragment = ZegoUIKitPrebuiltLiveStreamingFragment.newInstance(
-                AppConstants.appId,AppConstants.appSign,userID,name,liveID,config);
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container,fragment)
-                .commitNow();
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.CAMERA)
+                != PackageManager.PERMISSION_GRANTED ||
+
+                ContextCompat.checkSelfPermission(this,
+                        Manifest.permission.RECORD_AUDIO)
+                        != PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(
+                    this,
+                    new String[]{
+                            Manifest.permission.CAMERA,
+                            Manifest.permission.RECORD_AUDIO
+                    },
+                    100);
+
+        } else {
+
+            addFragment();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(
+            int requestCode,
+            String[] permissions,
+            int[] grantResults) {
+
+        super.onRequestPermissionsResult(
+                requestCode,
+                permissions,
+                grantResults);
+
+        if (requestCode == 100) {
+
+            addFragment();
+        }
+    }
+
+    private void addFragment() {
+
+        try {
+
+            Log.d("ZEGO_DEBUG", "addFragment started");
+
+            ZegoUIKitPrebuiltLiveStreamingConfig config;
+
+            if (isHost) {
+                config = ZegoUIKitPrebuiltLiveStreamingConfig.host();
+            } else {
+                config = ZegoUIKitPrebuiltLiveStreamingConfig.audience();
+            }
+
+            Log.d("ZEGO_DEBUG", "Config created");
+
+            ZegoUIKitPrebuiltLiveStreamingFragment fragment =
+                    ZegoUIKitPrebuiltLiveStreamingFragment.newInstance(
+                            AppConstants.appId,
+                            AppConstants.appSign,
+                            userID,
+                            name,
+                            liveID,
+                            config
+                    );
+
+            Log.d("ZEGO_DEBUG", "Fragment created");
+
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .commit();
+
+            Log.d("ZEGO_DEBUG", "Fragment added");
+
+            Toast.makeText(this,
+                    "ZEGO Loaded",
+                    Toast.LENGTH_LONG).show();
+
+        } catch (Exception e) {
+
+            Log.e("ZEGO_ERROR",
+                    "ERROR = " + e.getMessage(),
+                    e);
+
+            Toast.makeText(this,
+                    "ERROR : " + e.getMessage(),
+                    Toast.LENGTH_LONG).show();
+        }
     }
 }
